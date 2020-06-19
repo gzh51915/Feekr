@@ -10,6 +10,7 @@ class Search extends Component {
         this.state = {
             percent: 100,
             display: 'none',
+            position: '',
             history: [],
             title: '',
             delet: false
@@ -34,8 +35,7 @@ class Search extends Component {
         // console.log(2)
         this.setState({
             display: 'block',
-
-
+            position: 'fixed',
         })
         setTimeout(() => {
             this.setState({
@@ -107,7 +107,7 @@ class Search extends Component {
         return <div>
             <div className="top-search">
                 <input type="text" onClick={this.decrease} className="sea1" placeholder="搜索目的地/攻略/旅行资讯" />
-                <div className="box" style={{ left: `${this.state.percent}%`, display: this.state.display }}>
+                <div className="box" style={{ left: `${this.state.percent}%`, display: this.state.display, position: this.state.position, }}>
                     <div className="content">
                         <div className="top">
                             <div onClick={this.increase} className="table-cell iconfont icon-fanhui txt-left back-to-guide"></div>

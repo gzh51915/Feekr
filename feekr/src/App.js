@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Reg from './pages/Reg';
 import Forget from './pages/Forget';
+import 'antd/dist/antd.css';
 function App() {
     return (
         <div>
@@ -15,8 +16,8 @@ function App() {
                 <Route path="/forget" component={Forget} />
                 <Redirect from="/" to="/home" exact />
                 <Route path="/notfound" component={() => <div>404</div>} />
+                <Redirect to="/notfound" />
             </Switch>
-
         </div>
     );
 }
