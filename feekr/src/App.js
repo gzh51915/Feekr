@@ -1,18 +1,24 @@
 import React from 'react';
-import { Route, Switch, Redirect } from 'react-router-dom';
+import { Route, Switch, withRouter, Redirect } from 'react-router-dom';
 import Home from './pages/Home';
+import Login from './pages/Login';
+import Reg from './pages/Reg';
+import Forget from './pages/Forget';
 function App() {
-  return (
-    <div>
+    return (
+        <div>
 
-      <Switch>
-        <Route path="/home" component={Home} />
-        <Redirect from="/" to="/home" exact />
-        <Route path="/notfound" component={() => <div>404</div>} />
-      </Switch>
+            <Switch>
+                <Route path="/home" component={Home} />
+                <Route path="/login" component={Login} />
+                <Route path="/reg" component={Reg} />
+                <Route path="/forget" component={Forget} />
+                <Redirect from="/" to="/home" exact />
+                <Route path="/notfound" component={() => <div>404</div>} />
+            </Switch>
 
-    </div>
-  );
+        </div>
+    );
 }
-
+App = withRouter(App)
 export default App;
