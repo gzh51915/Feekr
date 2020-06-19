@@ -93,7 +93,7 @@ class Reg extends Component {
                                 console.log(data)
                                 if (data.code) {//1  可以登录 
                                     console.log('yes')
-                                    this.props.history.push('/user/' + user)//跳转到用户页
+                                    this.props.history.push('/login/' + user)//跳转到用户页
                                     //存token在本地
 
                                     let userToken = {
