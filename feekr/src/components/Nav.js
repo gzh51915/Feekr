@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
-import { NavLink, } from 'react-router-dom';
-// import { findDOMNode } from 'react-dom'
-
-
-import '../assets/Nav.css'
+import '../assets/Nav.css';
+import { NavLink } from 'react-router-dom';
 class Nav extends Component {
 
     // componentDidUpdate() {
