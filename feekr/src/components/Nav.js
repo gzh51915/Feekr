@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import '../assets/Nav.css'
+import '../assets/Nav.css';
+import { NavLink } from 'react-router-dom';
 class Nav extends Component {
     render() {
 

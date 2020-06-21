@@ -8,6 +8,31 @@
   margin-bottom: 0 !important;
 }
 
+.box1 .slick-dots-bottom {
+  position: absolute !important;
+  bottom: 2.66667vw !important;
+  height: 2.13333vw !important;
+}
+
+.box1 .slick-dots-bottom li {
+  width: 2.13333vw !important;
+  height: 2.13333vw !important;
+  border-radius: 100% !important;
+  background: #000 !important;
+  opacity: 0.2 !important;
+  margin: 0 1.06667vw !important;
+}
+
+.box1 .slick-dots-bottom li button {
+  width: 0vw !important;
+  height: 0vw !important;
+}
+
+.box1 .slick-dots-bottom .slick-active {
+  background: #fff !important;
+  opacity: 1 !important;
+}
+
 .banner {
   height: 60vw;
 }
@@ -351,5 +376,9 @@
 .main .selected-container .get-more {
   color: #1ABC9C;
   display: block;
-  padding: 2rem 0;
+  padding: 5.33333vw 0;
+  font-size: 3.73333vw;
+  text-align: center;
+  border-top: 1px solid #F2F2F2;
+  margin-bottom: 13.33333vw;
 }

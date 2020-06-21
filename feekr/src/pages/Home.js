@@ -3,8 +3,8 @@ import '../utils/base.css';
 import '../utils/icon.css';
 import '../assets/Home.css';
 import Search from '../components/search';
-import Nav from '../layout/Nav';
-import Carousel from 'antd/es/carousel'
+import Nav from '../components/Nav';
+import Carousel from 'antd/es/carousel';
 
 class Home extends Component {
     constructor(props) {
@@ -194,7 +194,7 @@ class Home extends Component {
                             </div>
                         })
                     }
-                    <a className="get-more bota font-md txt-center" href="/column/news">更多栏目推荐</a>
+                    <a className="get-more bota font-md txt-center" href="*">更多栏目推荐</a>
                 </section>
             </div>
             <Nav />

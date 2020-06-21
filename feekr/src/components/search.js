@@ -85,7 +85,7 @@ class Search extends Component {
         let data = localStorage.getItem('search')
         if (data) {
             let data1 = data.split(',')
-            console.log(data1)
+            // console.log(data1)
             if (data) {
                 this.setState({
                     history: data1,
