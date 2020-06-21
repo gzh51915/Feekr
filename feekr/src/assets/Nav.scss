@@ -42,16 +42,17 @@ a {
                 box-sizing: border-box;
                 -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
-                .icon-shouyepressed .iconfont {
+                .iconfont {
                     // color: #1abc9c;
-                    font-size: 24px;
+                    font-size: vw(22)!important;
+                    line-height: vw(24);
                     display: block;
                 }
 
 
                 .nav-name {
-                    margin-top: -.2rem;
-                    font-size: 1rem;
+                    margin-top: vw(-2);
+                    font-size: vw(10);
                     display: block;
                 }
             }

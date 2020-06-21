@@ -91,7 +91,7 @@ class Home extends Component {
                 {
                     num.map(item => {
                         return <div className="banner" key={item.thumb}>
-                            <img src={item.thumb} alt="" />
+                            <img src={item.thumb} alt="###" />
                         </div>
                     })
                 }
@@ -101,7 +101,7 @@ class Home extends Component {
                 <div className="flex-wrap">
                     {
                         menu.map(item => {
-                            return <a key={item.path} className="flex-item txt-center" href="/home">
+                            return <a key={item.path} className="flex-item txt-center" href="###">
                                 <p className={`iconfont ${item.icon}`} style={{ color: `"${item.color}"` }}></p>
                                 <p className="font-sm">{item.text}</p>
                             </a>
@@ -120,8 +120,8 @@ class Home extends Component {
                     <div className="list">
                         {
                             num2.map(item => {
-                                return <a className="flex-wrap" key={item.productId} href="*">
-                                    <img src={item.productCover} alt="" className="news-cover lazy" style={{ display: "block" }} />
+                                return <a className="flex-wrap" key={item.productId} href="###">
+                                    <img src={item.productCover} alt="###" className="news-cover lazy" style={{ display: "block" }} />
                                     <p className="product-title">{item.productName}</p>
                                     <p className="area">{item.productArea} - {item.productCity}</p>
                                     <p className="price"><span className="font-md">￥{item.productPrice}起</span></p>
@@ -139,9 +139,9 @@ class Home extends Component {
                     <div className="list-clearfix">
                         {
                             num3.map(item => {
-                                return <a className="pull-left city-item" href="*" key={item.cityName}>
+                                return <a className="pull-left city-item" href="###" key={item.cityName}>
                                     <div className="thumb-wrap">
-                                        <img className="city-cover lazy" src={item.cover} alt="" />
+                                        <img className="city-cover lazy" src={item.cover} alt="###" />
                                         <div className="layer font-lg regular-font">{item.cityName}</div>
                                     </div>
                                     <p className="txt-center font-sm">{item.fxb}位当地飞小编推荐</p>
@@ -149,7 +149,7 @@ class Home extends Component {
                             })
                         }
                     </div>
-                    <a className="get-more font-md txt-center" href="*">更多目的地推荐</a>
+                    <a className="get-more font-md txt-center" href="###">更多目的地推荐</a>
                 </section>
                 <section className="selected-container">
                     <section className="title"> <span className="header-line"></span> <span className="font-llg header-title">编辑精选</span> <span className="sub-title">推荐最具小众特色的旅行体验</span> </section>
@@ -157,11 +157,11 @@ class Home extends Component {
                         num4.map(item => {
                             return <div className="list" key={item.column}>
                                 <section className="flex-wrap sub-title-wrap"> <div className="font-md">{item.column}</div> <div className="flex-item line"></div>  <a href="###" className="font-md more-btn">更多</a>  </section>
-                                <a className="selected-item" key={item.article[0].id} href="\">
+                                <a className="selected-item" key={item.article[0].id} href="###">
                                     <p className="font-lg selected-title">{item.article[0].title}
                                     </p>
                                     <div className="flex-wrap">
-                                        <img className="selected-cover lazy" src={item.article[0].cover} alt="" />
+                                        <img className="selected-cover lazy" src={item.article[0].cover} alt="###" />
                                         <div className="flex-item selected">
                                             <p className="font-sm">{item.article[0].desc} </p>
                                             <p className="product-tag">
@@ -174,11 +174,11 @@ class Home extends Component {
                                         </div>
                                     </div>
                                 </a>
-                                <a className="selected-item" key={item.article[1].id} href="\">
+                                <a className="selected-item" key={item.article[1].id} href="###">
                                     <p className="font-lg selected-title">{item.article[1].title}
                                     </p>
                                     <div className="flex-wrap">
-                                        <img className="selected-cover lazy" src={item.article[1].cover} alt="" />
+                                        <img className="selected-cover lazy" src={item.article[1].cover} alt="###" />
                                         <div className="flex-item selected">
                                             <p className="font-sm">{item.article[1].desc} </p>
                                             <p className="product-tag">
@@ -194,7 +194,7 @@ class Home extends Component {
                             </div>
                         })
                     }
-                    <a className="get-more bota font-md txt-center" href="*">更多栏目推荐</a>
+                    <a className="get-more bota font-md txt-center" href="###">更多栏目推荐</a>
                 </section>
             </div>
             <Nav />

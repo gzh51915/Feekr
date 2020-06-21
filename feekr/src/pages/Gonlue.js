@@ -2,34 +2,48 @@ import React, { Component } from 'react';
 import Search from '../components/search'
 import '../assets/Gonlue.css'
 import Nav from '../components/Nav';
+import http from '../utils/gonluehttp';
+
 class Gonlue extends Component {
     state = {
-        cityrecommend: [
-        ],
-
-
-        citylist: []
-    }
-    goto = (id) => {
-        this.props.history.push('/gonglve/guide/' + id)
+        num: [],
+        num2: [],
+        num3: [],
     }
     async componentDidMount() {
-        // let { data } = await Api.citylist();
-        // // console.log(data[0].result.list)
-        // // console.log(this.props)
+        let res = await http.get('cityrecommend', {
 
-        // let cityrecommenddatas = await Api.cityrecommend();
-        // // console.log(cityrecommenddatas.data[0].result.list)
-        // let cityrecommend = cityrecommenddatas.data[0].result.list;
-        // this.setState({
-        //     cityrecommend,
-        //     citylist: data[0].result.list
-        // })
+        })
+        // console.log(res);
+        let num = res.result.list;
+        num.splice(4, 1);
+        // console.log(num);
+
+        let res2 = await http.get('citylist', {
+
+        })
+        // console.log(res2);
+        let num2 = res2.result.list;
+        num2.splice(9, 1);
+        // console.log(num2);
+
+        let res3 = await http.get('citylist', {
+
+        })
+        let num3 = res3.result.list;
+        num3.splice(0, 9);
+        // console.log(num3);
+
+
+        this.setState({
+            num,
+            num2,
+            num3
+        })
     }
     render() {
-        // console.log(this.state.cityrecommend)
-        // console.log(this.props.match.path)
-        let { cityrecommendImg, cityrecommend, citylist } = this.state
+
+        let { num, num2, num3 } = this.state;
         return <div id='gonglve'>
             <Search />
             <section className="season-recommend-container">
@@ -40,24 +54,23 @@ class Gonlue extends Component {
                         <span>-</span>
                     </header>
                     <div className="item-container clearfix body-space">
-                        {/* {
-                            cityrecommend.map((item) => {
+                        {
+                            num.map((item) => {
                                 return <div className="item pull-left"
-                                    onClick={this.goto.bind('this', item.scenic)}
                                     key={item.scenic}>
-                                    <img src={`https://images.weserv.nl/?url=${item.cover}`} style={{ display: "block" }} />
+                                    <img src={`https://images.weserv.nl/?url=${item.cover}`} alt="###" style={{ display: "block" }} />
                                     <div className="item-title txt-center city-title font-md">{item.cityName}</div>
                                     <div className="item-desc txt-center city-desc font-sm">{item.desc}</div>
                                 </div>
                             })
-                        } */}
+                        }
                     </div>
                 </div>
 
             </section>
             <section className="area-list-container">
-                {/* {
-                    citylist.map((item, inx) => {
+                {
+                    num2.map((item, inx) => {
                         return <section className="area-list" key={inx}>
                             <div className="item-container body-space clearfix">
                                 <header className="header-title-wrap txt-center font-lg">
@@ -66,18 +79,38 @@ class Gonlue extends Component {
                                 </header>
                                 {
                                     item.city.map((item, inx) => {
-                                        return <div className="item pull-left" key={item.id} onClick={this.goto.bind('this', item.id)}>
-                                            <img src={`https://images.weserv.nl/?url=${item.cover}`} style={{ display: "block" }} />
+                                        return <div className="item pull-left" key={item.id}>
+                                            <img src={`https://images.weserv.nl/?url=${item.cover}`} alt="###" style={{ display: "block" }} />
                                             <div className="item-title txt-center city-title font-md">{item.name}</div>
                                         </div>
                                     })
                                 }
-
                             </div>
                         </section>
                     })
-                } */}
 
+                }
+                {
+                    num3.map((item, inx) => {
+                        return <section className="area-list" key={inx}>
+                            <div className="item-container body-space clearfix">
+                                <header className="header-title-wrap txt-center font-lg">
+                                    <span className="section-title regular-font">{item.area}</span>
+                                    <div className="sub-title txt-center font-sm" > {item.desc} </div >
+                                </header>
+                                {
+                                    item.city.map((item, inx) => {
+                                        return <div className="item-bottom pull-left item-bottom" key={item.id}>
+                                            <img src={`https://images.weserv.nl/?url=${item.cover}`} alt="###" style={{ display: "block" }} />
+                                            <div className="item-title txt-center city-title font-md">{item.name}</div>
+                                        </div>
+                                    })
+                                }
+                            </div>
+                        </section>
+                    })
+
+                }
             </section>
             <Nav path={this.props.location.pathname} />
         </div>

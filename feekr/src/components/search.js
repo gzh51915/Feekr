@@ -62,7 +62,7 @@ class Search extends Component {
             this.state.history.push(aa)
             let Item = this.state.history.toString()
             // console.log(Item)
-            localStorage.setItem('search', `{adr:${Item}}`)
+            localStorage.setItem('search', `{${Item}}`)
             this.setState({
                 history: this.state.history,
                 title: '',
@@ -113,21 +113,21 @@ class Search extends Component {
                             <div onClick={this.increase} className="table-cell iconfont icon-fanhui txt-left back-to-guide"></div>
                             <input type="text" value={this.state.title} ref={(ele) => this.title = ele} onChange={this.Changetitle} className="sea2" placeholder="搜索目的地/攻略/旅行资讯" />
                             <div className="right" onClick={this.add}>
-                                <a className="search-btn" href="/column/news">搜索</a>
+                                <a className="search-btn" href="###">搜索</a>
                             </div>
                         </div>
                         <div className="history">
                             <header className="header-title-wrap t"> <span>-</span> <span className="section-title">最近搜索</span> <span>-</span> </header>
-                            <a href="/column/news" onClick={this.remove} style={this.state.delet ? { display: 'block' } : { display: 'none' }} className="pull-right del-search-btn"><span className="iconfont icon-lajitong"></span></a>
+                            <a href="###" onClick={this.remove} style={this.state.delet ? { display: 'block' } : { display: 'none' }} className="pull-right del-search-btn"><span className="iconfont icon-lajitong"></span></a>
                             <div className="tag-container">
                                 {
                                     history.map(item => {
-                                        return <a href="/column/news" data-href="###" key={item} className="tag-item search-keyword"> {item} </a>
+                                        return <a href="###" data-href="###" key={item} className="tag-item search-keyword"> {item} </a>
                                     })
                                 }
                             </div>
                         </div>
-                        <section className="hot-search"> <div className="search-tag-panel hot-search-panel"> <header className="header-title-wrap txt-center font-lg regular-font"> <span>-</span> <span className="section-title">热门搜索</span> <span>-</span> </header> <div className="tag-container">    <a href="/column/news" data-href="###" className="tag-item search-keyword">杭州</a>    <a href="/column/news" data-href="###" className="tag-item search-keyword">上海</a>    <a href="/column/news" data-href="###" className="tag-item search-keyword">苏州</a>    <a href="/column/news" data-href="###t" className="tag-item search-keyword">莫干山</a>    <a href="/column/news" data-href="###" className="tag-item search-keyword">成都</a>   </div> </div></section>
+                        <section className="hot-search"> <div className="search-tag-panel hot-search-panel"> <header className="header-title-wrap txt-center font-lg regular-font"> <span>-</span> <span className="section-title">热门搜索</span> <span>-</span> </header> <div className="tag-container">    <a href="###" data-href="###" className="tag-item search-keyword">杭州</a>    <a href="###" data-href="###" className="tag-item search-keyword">上海</a>    <a href="###" data-href="###" className="tag-item search-keyword">苏州</a>    <a href="###" data-href="###t" className="tag-item search-keyword">莫干山</a>    <a href="###" data-href="###" className="tag-item search-keyword">成都</a>   </div> </div></section>
                     </div>
                 </div>
             </div>

@@ -5,9 +5,6 @@ import '../utils/icon.css'
 import '../assets/Weixin.css';
 
 class Weixin extends Component {
-    constructor() {
-        super();
-    }
 
     render() {
         return <section className="footer-box">
@@ -19,7 +16,7 @@ class Weixin extends Component {
                 </p>
             </div>
             <div className="footer-box-vcode">
-                <img src="https://m.feekr.com/resource/img/icon/feekr_code.png" />
+                <img src="https://m.feekr.com/resource/img/icon/feekr_code.png" alt="/" />
                 <p>长按二维码或添加微信：feekr_trip</p>
                 <p>关注feekr小众旅行, 获取最新玩法攻略</p>
             </div>

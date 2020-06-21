@@ -14,23 +14,13 @@ import http from '../utils/dujiahttp';
 
 class Dujia extends Component {
 
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            num: [],
-            num2: [],
-            num3: [],
-            num4: [],
-            num5: [],
-            like1: []
-        }
-        this.changeMenu = this.changeMenu.bind(this);
-    }
-
-    changeMenu(cur) {
-        // console.log(cur)
-        this.props.history.push(cur)
+    state = {
+        num: [],
+        num2: [],
+        num3: [],
+        num4: [],
+        num5: [],
+        like1: []
     }
 
     async componentDidMount() {
@@ -58,7 +48,7 @@ class Dujia extends Component {
         })
         // console.log(res2);
         let like1 = res2.result.list;
-        console.log(like1);
+        // console.log(like1);
 
 
         this.setState({
@@ -80,7 +70,7 @@ class Dujia extends Component {
                 {
                     num.map(item => {
                         return <div className="banner" key={item.cover}>
-                            <img src={item.cover} alt="" />
+                            <img src={item.cover} alt="###" />
                         </div>
                     })
                 }
@@ -88,8 +78,8 @@ class Dujia extends Component {
             < ul className="search-nav" >
                 {
                     num2.map((item, index) => {
-                        return <li className="nav-detail" key={item.id} onClick={this.changeMenu.bind(this, `navsearch/${item.nav_id}`)}>
-                            <img src={item.icon} className="nav-icon" alt="" />
+                        return <li className="nav-detail" key={item.id} >
+                            <img src={item.icon} className="nav-icon" alt="###" />
                             <p className="type">{item.name}</p>
                         </li>
                     })
@@ -105,9 +95,9 @@ class Dujia extends Component {
                     <div className="common-search-entry-nav">
                         {
                             num3.map((item, index) => {
-                                return <div className="common-goods common-search-entry-item" key={item.id} onClick={this.changeMenu.bind(this, `xiangqing/25954`)}>
+                                return <div className="common-goods common-search-entry-item" key={item.id}>
                                     <img src={item.cover}
-                                        className="common-goods-img lazyloaded" alt="" />
+                                        className="common-goods-img lazyloaded" alt="###" />
                                     <h3 className="common-goods-content one-line-ellipsis">{item.productName}
                                     </h3>
                                     <p className="common-goods-price">
@@ -130,9 +120,9 @@ class Dujia extends Component {
                     <div className="common-search-entry-nav">
                         {
                             num4.map((item, index) => {
-                                return <div className="common-goods common-search-entry-item" key={item.id} onClick={this.changeMenu.bind(this, `xiangqing/25954`)}>
+                                return <div className="common-goods common-search-entry-item" key={item.id}>
                                     <img src={item.cover}
-                                        className="common-goods-img lazyloaded" alt="" />
+                                        className="common-goods-img lazyloaded" alt="###" />
                                     <h3 className="common-goods-content one-line-ellipsis">{item.productName}
                                     </h3>
                                     <p className="common-goods-price">
@@ -159,7 +149,7 @@ class Dujia extends Component {
                             return <li className="theme-entry-item" key={item.id}>
                                 <div className="theme-entry-link">
                                     <img src={item.cover}
-                                        className="theme-entry-img lazyloaded" alt="" />
+                                        className="theme-entry-img lazyloaded" alt="###" />
                                     <p className="theme-entry-content">{item.name}</p>
                                 </div>
                             </li>
@@ -177,9 +167,9 @@ class Dujia extends Component {
                     <div className="maybe-like-box">
                         {
                             like1.map(item => {
-                                return <div className="common-goods maybe-like-item" key={item.id} onClick={this.changeMenu.bind(this, `xiangqing/${item.id}`)}>
+                                return <div className="common-goods maybe-like-item" key={item.id}>
                                     <img src={item.cover}
-                                        className="common-goods-img lazyloaded" alt="" />
+                                        className="common-goods-img lazyloaded" alt="###" />
                                     <h3 className="common-goods-content one-line-ellipsis">{item.productName}</h3>
                                     <p className="common-goods-price">
                                         <span className="common-goods-num">{item.currentPrice}&nbsp;</span>起
