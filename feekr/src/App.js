@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Reg from './pages/Reg';
 import Forget from './pages/Forget';
+import User from './pages/User'
 function App() {
     return (
         <div>
@@ -12,6 +13,7 @@ function App() {
                 <Route path="/home" component={Home} />
                 <Route path="/login" component={Login} />
                 <Route path="/reg" component={Reg} />
+                <Route path="/user/:id" component={User} />
                 <Route path="/forget" component={Forget} />
                 <Redirect from="/" to="/home" exact />
                 <Route path="/notfound" component={() => <div>404</div>} />
