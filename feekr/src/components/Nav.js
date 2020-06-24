@@ -1,8 +1,35 @@
 import React, { Component } from 'react';
-import '../assets/Nav.css';
-import { NavLink } from 'react-router-dom';
+import { NavLink, } from 'react-router-dom';
+// import { findDOMNode } from 'react-dom'
+
+
+import '../assets/Nav.css'
 class Nav extends Component {
+
+    // componentDidUpdate() {
+
+    //     if (this.props.path === '/login' || this.props.path === '/reg' || this.props.path === '/forget' || this.props.path.indexOf('/guide/') === 8) {
+    //         // console.log(findDOMNode(this.refs.comment));
+    //         findDOMNode(this.refs.comment).style.display = 'none'
+    //     } else {
+    //         findDOMNode(this.refs.comment).style.display = 'block'
+    //     }
+
+    // }
+    // componentDidMount() {
+
+    //     if (this.props.path === '/login' || this.props.path === '/reg' || this.props.path === '/forget' || this.props.path.indexOf('/guide/') === 8) {
+    //         // console.log(findDOMNode(this.refs.comment));
+    //         findDOMNode(this.refs.comment).style.display = 'none'
+    //     } else {
+    //         findDOMNode(this.refs.comment).style.display = 'block'
+    //     }
+    //     // console.log(JSON.parse(localStorage.authorization).user)
+
+    // }
     render() {
+
+        // console.log('nav', this.props.path.indexOf('/guide/'))
         return <>
             <div className="nav" ref='comment' style={{ display: 'block' }}>
                 <nav className="nav-wrap table-mode">
@@ -25,7 +52,7 @@ class Nav extends Component {
                         </NavLink>
                     </div>
                     <div className="table-cell">
-                        <NavLink to='/login' className="nav-menu nav-3" href="/user?pv_from=navindex" activeStyle={{ color: '#1abc9c' }}>
+                        <NavLink to={localStorage.length ? `/user/${JSON.parse(localStorage.authorization).user}` : '/login'} className="nav-menu nav-3" href="/user?pv_from=navindex" activeStyle={{ color: '#1abc9c' }}>
                             <span className="iconfont icon-wodenormal"></span>
                             <span className="nav-name">我的</span>
                         </NavLink>

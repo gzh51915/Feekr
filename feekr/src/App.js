@@ -9,6 +9,7 @@ import Forget from './pages/Forget';
 import Xiangqing from './pages/Xiangqing';
 import NavSearch from './pages/NavSearch';
 import User from './pages/User';
+import Exit from './pages/Exit';
 import 'antd/dist/antd.css';
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
         <Route path="/reg" component={Reg} />
         <Route path="/forget" component={Forget} />
         <Route path="/user/:id" component={User} />
+        <Route path="/exit/:id" component={Exit} />
         <Route path="/navsearch" component={NavSearch} />
         <Route path="/xiangqing" component={Xiangqing} />
         <Redirect from="/" to="/home" exact />
