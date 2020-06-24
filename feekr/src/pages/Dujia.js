@@ -125,7 +125,7 @@ class Dujia extends Component {
                     <div className="common-search-entry-nav">
                         {
                             num4.map((item, index) => {
-                                return <div className="common-goods common-search-entry-item" key={item.id}>
+                                return <div className="common-goods common-search-entry-item" key={item.id} onClick={this.changeMenu.bind(this, `xiangqing/${item.id}`)}>
                                     <img src={`https://images.weserv.nl/?url=${item.cover}`}
                                         className="common-goods-img lazyloaded" alt="###" />
                                     <h3 className="common-goods-content one-line-ellipsis">{item.productName}

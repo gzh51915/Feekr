@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { Route, Switch, withRouter, Redirect } from 'react-router-dom';
+import React from 'react';
+import { Route, Switch, Redirect } from 'react-router-dom';
 import Home from './pages/Home';
 import Dujia from './pages/Dujia';
 import Gonlue from './pages/Gonlue'
@@ -32,5 +32,5 @@ function App() {
     </div >
   );
 }
-App = withRouter(App)
+
 export default App;
