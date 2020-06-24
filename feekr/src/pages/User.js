@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../assets/User.css'
 import { Link } from 'react-router-dom';
-import Nav from '../layout/Nav';
+import Nav from '../components/Nav';
 class User extends Component {
     state={
         text:''
@@ -22,7 +22,7 @@ class User extends Component {
             <div className="user-home nav-space"><a className="user-info table-mode" href="/user/author?id=73282&amp;pv_from=mypage">
             <div className="table-cell">
                 
-                <img src="https://res01.feekr.com/wap/avatar/fxb-avatar-180X180.jpg" className="avatar" />
+                <img src="https://res01.feekr.com/wap/avatar/fxb-avatar-180X180.jpg" alt="" className="avatar" />
                 
             </div>
             <div className="table-cell txt-left">

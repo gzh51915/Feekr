@@ -87,12 +87,12 @@ class Home extends Component {
     }
 
     changelist = (path) => {
-        console.log(path)
+        // console.log(path)
         let names = path;
         this.setState({
             names,
         })
-        console.log(names)
+        // console.log(names)
     }
     render() {
         let { num, menu, num2, num3, num4 } = this.state;
