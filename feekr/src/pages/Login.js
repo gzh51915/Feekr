@@ -52,7 +52,7 @@ class Login extends Component {
                     }
                     let str = JSON.stringify(userToken);//把对象转成字符串
                     localStorage.setItem('authorization', str);//存token在本地
-                    this.props.history.push('/Home/' + user)//跳转到用户页
+                    this.props.history.push('/user/' + user)//跳转到用户页
                 } else {
                     this.tip('用户名或密码错误!')
                 }
