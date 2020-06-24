@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
 import '../utils/base.css';
 import '../utils/icon.css';
 import '../assets/Home.css';
@@ -16,8 +17,8 @@ class Home extends Component {
             num4: [],
             menu: [
                 {
-                    name: 'gonglve',
-                    path: '/gonglve',
+                    name: 'gonlue',
+                    path: '/gonlue',
                     text: '攻略',
                     icon: 'icon-gonglve',
                     color: '#FCBC00'
@@ -47,7 +48,7 @@ class Home extends Component {
                     color: '#00AC59'
                 }
             ],
-
+            names: ''
         }
     }
 
@@ -84,6 +85,15 @@ class Home extends Component {
             num4
         })
     }
+
+    changelist = (path) => {
+        console.log(path)
+        let names = path;
+        this.setState({
+            names,
+        })
+        console.log(names)
+    }
     render() {
         let { num, menu, num2, num3, num4 } = this.state;
         return <div className="box1">
@@ -101,10 +111,10 @@ class Home extends Component {
                 <div className="flex-wrap">
                     {
                         menu.map(item => {
-                            return <a key={item.path} className="flex-item txt-center" href="###">
+                            return <NavLink to={this.state.names === '/dujia' ? '/dujia' : '/gonlue'} key={item.path} className="flex-item txt-center" href="###" onClick={this.changelist.bind(this, item.path)}>
                                 <p className={`iconfont ${item.icon}`} style={{ color: `"${item.color}"` }}></p>
                                 <p className="font-sm">{item.text}</p>
-                            </a>
+                            </NavLink>
                         })
                     }
                 </div>
@@ -141,7 +151,7 @@ class Home extends Component {
                             num3.map(item => {
                                 return <a className="pull-left city-item" href="###" key={item.cityName}>
                                     <div className="thumb-wrap">
-                                        <img className="city-cover lazy" src={item.cover} alt="###" />
+                                        <img className="city-cover lazy" src={`https://images.weserv.nl/?url=${item.cover}`} alt="###" />
                                         <div className="layer font-lg regular-font">{item.cityName}</div>
                                     </div>
                                     <p className="txt-center font-sm">{item.fxb}位当地飞小编推荐</p>

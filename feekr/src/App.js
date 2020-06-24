@@ -6,6 +6,8 @@ import Gonlue from './pages/Gonlue'
 import Login from './pages/Login';
 import Reg from './pages/Reg';
 import Forget from './pages/Forget';
+import Xiangqing from './pages/Xiangqing';
+import NavSearch from './pages/NavSearch';
 import 'antd/dist/antd.css';
 class App extends Component {
   render() {
@@ -19,6 +21,9 @@ class App extends Component {
           <Route path="/login" component={Login} />
           <Route path="/reg" component={Reg} />
           <Route path="/forget" component={Forget} />
+          <Route path="/xiangqing" component={Xiangqing} />
+          <Route path="/navSearch" component={NavSearch} />
+          {/* <Route path="/navsearch" component={NavSearch} /> */}
           <Redirect from="/" to="/home" exact />
           <Route path="/notfound" component={() => <div>404</div>} />
           <Redirect to="/notfound" />

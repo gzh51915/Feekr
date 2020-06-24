@@ -10,7 +10,7 @@ import '../assets/Dujia.css';
 
 import Weixin from '../components/Weixin';
 import Nav from '../components/Nav';
-import http from '../utils/dujiahttp';
+import http from '../api/dujiahttp';
 
 class Dujia extends Component {
 
@@ -62,6 +62,11 @@ class Dujia extends Component {
         // // console.log(this.state);
     }
 
+    changeMenu(cur) {
+        // console.log(cur)
+        this.props.history.push(cur)
+    }
+
     render() {
         let { num, num2, num3, num4, num5, like1 } = this.state;
         return <div className="Dujia">
@@ -78,7 +83,7 @@ class Dujia extends Component {
             < ul className="search-nav" >
                 {
                     num2.map((item, index) => {
-                        return <li className="nav-detail" key={item.id} >
+                        return <li className="nav-detail" key={item.id} onClick={this.changeMenu.bind(this, `navsearch/${item.id}`)}>
                             <img src={item.icon} className="nav-icon" alt="###" />
                             <p className="type">{item.name}</p>
                         </li>
@@ -95,8 +100,8 @@ class Dujia extends Component {
                     <div className="common-search-entry-nav">
                         {
                             num3.map((item, index) => {
-                                return <div className="common-goods common-search-entry-item" key={item.id}>
-                                    <img src={item.cover}
+                                return <div className="common-goods common-search-entry-item" key={item.id} onClick={this.changeMenu.bind(this, `xiangqing/${item.id}`)}>
+                                    <img src={`https://images.weserv.nl/?url=${item.cover}`}
                                         className="common-goods-img lazyloaded" alt="###" />
                                     <h3 className="common-goods-content one-line-ellipsis">{item.productName}
                                     </h3>
@@ -121,7 +126,7 @@ class Dujia extends Component {
                         {
                             num4.map((item, index) => {
                                 return <div className="common-goods common-search-entry-item" key={item.id}>
-                                    <img src={item.cover}
+                                    <img src={`https://images.weserv.nl/?url=${item.cover}`}
                                         className="common-goods-img lazyloaded" alt="###" />
                                     <h3 className="common-goods-content one-line-ellipsis">{item.productName}
                                     </h3>
@@ -148,7 +153,7 @@ class Dujia extends Component {
                         num5.map((item, index) => {
                             return <li className="theme-entry-item" key={item.id}>
                                 <div className="theme-entry-link">
-                                    <img src={item.cover}
+                                    <img src={`https://images.weserv.nl/?url=${item.cover}`}
                                         className="theme-entry-img lazyloaded" alt="###" />
                                     <p className="theme-entry-content">{item.name}</p>
                                 </div>
@@ -168,7 +173,7 @@ class Dujia extends Component {
                         {
                             like1.map(item => {
                                 return <div className="common-goods maybe-like-item" key={item.id}>
-                                    <img src={item.cover}
+                                    <img src={`https://images.weserv.nl/?url=${item.cover}`}
                                         className="common-goods-img lazyloaded" alt="###" />
                                     <h3 className="common-goods-content one-line-ellipsis">{item.productName}</h3>
                                     <p className="common-goods-price">

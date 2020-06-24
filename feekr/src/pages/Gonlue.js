@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import Search from '../components/search'
 import '../assets/Gonlue.css'
 import Nav from '../components/Nav';
-import http from '../utils/gonluehttp';
+import http from '../api/gonluehttp';
+// import tuijian from '../utils/tuijian.json';
 
 class Gonlue extends Component {
     state = {
@@ -10,13 +11,13 @@ class Gonlue extends Component {
         num2: [],
         num3: [],
     }
+
     async componentDidMount() {
         let res = await http.get('cityrecommend', {
 
         })
         // console.log(res);
         let num = res.result.list;
-        num.splice(4, 1);
         // console.log(num);
 
         let res2 = await http.get('citylist', {
@@ -55,9 +56,9 @@ class Gonlue extends Component {
                     </header>
                     <div className="item-container clearfix body-space">
                         {
-                            num.map((item) => {
+                            num.map((item, idx) => {
                                 return <div className="item pull-left"
-                                    key={item.scenic}>
+                                    key={idx}>
                                     <img src={`https://images.weserv.nl/?url=${item.cover}`} alt="###" style={{ display: "block" }} />
                                     <div className="item-title txt-center city-title font-md">{item.cityName}</div>
                                     <div className="item-desc txt-center city-desc font-sm">{item.desc}</div>
